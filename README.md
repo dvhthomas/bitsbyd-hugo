@@ -36,7 +36,7 @@ Add to `config.toml`:
 ```toml
 [module]
   [[module.imports]]
-    path = "github.com/dvhthomas/blog"
+    path = "github.com/dvhthomas/bitsbyd-hugo"
 ```
 
 Run `hugo server` and the theme will be downloaded automatically.
@@ -45,12 +45,12 @@ Run `hugo server` and the theme will be downloaded automatically.
 
 ```bash
 cd your-hugo-site
-git clone https://github.com/dvhthomas/blog.git themes/bitsbyme
+git clone https://github.com/dvhthomas/bitsbyd-hugo.git themes/bitsbyd
 ```
 
 Add to `config.toml`:
 ```toml
-theme = "bitsbyme"
+theme = "bitsbyd-hugo"
 ```
 
 ## Configuration
@@ -63,7 +63,7 @@ The theme works with just these settings:
 baseURL = "https://example.com/"
 languageCode = "en-us"
 title = "Your Site Title"
-theme = "bitsbyme"
+theme = "bitsbyd-hugo"
 
 # Required for search functionality
 [outputs]
@@ -80,7 +80,7 @@ Here's a full example with all optional parameters:
 baseURL = "https://example.com/"
 languageCode = "en-us"
 title = "Your Site Title"
-theme = "bitsbyme"
+theme = "bitsbyd-hugo"
 
 [pagination]
   pagerSize = 10
