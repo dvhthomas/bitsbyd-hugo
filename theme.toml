@@ -1,0 +1,18 @@
+name = "BitsByD"
+license = "MIT"
+licenselink = "https://github.com/dvhthomas/bitsbyd-hugo/blob/main/LICENSE"
+description = "A clean, accessible Hugo theme with variable-driven color scheme, integrated search, and support for technical content including Mermaid diagrams and callout blocks"
+homepage = "https://github.com/dvhthomas/bitsbyme-theme"
+demosite = "https://bitsby.me"
+tags = ["blog", "technical", "accessible", "minimal", "responsive", "search"]
+features = ["blog", "til", "series", "tags", "search", "accessibility", "mermaid", "vega", "callouts"]
+min_version = "0.110.0"
+
+[author]
+  name = "Dylan Thomas"
+  homepage = "https://BitsBy.Me"
+
+[original]
+  name = "BitsByMe"
+  homepage = "https://bitsby.me"
+  repo = "https://github.com/dvhthomas/blog"

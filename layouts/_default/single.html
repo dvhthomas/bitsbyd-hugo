@@ -1,0 +1,27 @@
+{{ define "main" }}
+
+<div class="content-type-badge">{{ .Section }}</div>
+
+<header>
+    <h1>{{ .Title }}</h1>
+    <div class="article-meta">{{ partial "date-and-tags.html" . }}</div>
+</header>
+{{ if .Params.summary }}
+<div id="abstract">{{ .Params.summary | markdownify }}</div>
+{{ end }} {{ partial "series.html" . }} {{ partial "toc.html" . }}
+<article>
+    {{ .Content }}
+    <br />
+    {{ partial "related.html" . }} {{- if and .File .Site.Params.githubRepo -}}
+    <p style="margin-top: 2rem; font-size: 0.9rem">
+        <a
+            href="{{ .Site.Params.githubRepo }}/blob/main/content/{{ .File.Path }}"
+            target="_blank"
+            rel="noopener"
+        >
+            View page source
+        </a>
+    </p>
+    {{- end -}}
+</article>
+{{ end }}

@@ -1,0 +1,15 @@
+{{ $spec := .Page.Resources.GetMatch (.Get "spec") }}
+{{ if $spec }}
+<div id='{{ .Get "id" }}'></div>
+<script type="text/javascript">
+    // Load chart spec directly from page bundle
+    var spec = {{ $spec.Content | safeJS }};
+    vegaEmbed('#{{ .Get "id" }}', spec).then(function(result) {}).catch(console.error);
+</script>
+{{ else }}
+<div style="color: red; border: 1px solid red; padding: 1rem; margin: 1rem 0;">
+    <strong>Vega Chart Error:</strong> Chart spec "{{ .Get "spec" }}" not found in page bundle.
+    <br>
+    <small>Expected location: Same directory as the markdown file ({{ .Page.File.Path }})</small>
+</div>
+{{ end }}

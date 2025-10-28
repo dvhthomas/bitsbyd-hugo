@@ -1,0 +1,101 @@
+baseURL = "https://example.com/"
+languageCode = "en-us"
+title = "My Technical Blog"
+theme = "bitsbyme"
+
+[pagination]
+  pagerSize = 10
+
+[params]
+    homeText = "tech writing learning"
+    homeIntro = """
+Hi 👋 [I'm a developer](/about). Check out my
+[blog posts](/blog/) or quick notes in
+[Today I Learned](/til/).
+"""
+    dateFormat = "January 2, 2006"
+    description = "A technical blog about development and learning"
+    githubRepo = "https://github.com/username/repo"
+
+    # Search configuration
+    searchPlaceholder = "Search...."
+    searchButton = "Search"
+    searchLabel = "Search the site"
+
+    # Footer social/navigation links
+    [[params.footerLinks]]
+        name = "GitHub"
+        url = "https://github.com/username"
+        icon = "github"
+        ariaLabel = "GitHub profile"
+        external = true
+
+    [[params.footerLinks]]
+        name = "Subscribe"
+        url = "/index.xml"
+        icon = "rss"
+        ariaLabel = "Subscribe via RSS"
+        external = false
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# Menu items support icons from Feather Icons (inline SVG symbols)
+# Available icons: home, edit, award, tag, book, user
+# Icon definitions: themes/bitsbyme/layouts/partials/nav.html (lines 28-107)
+[menu]
+    [[menu.main]]
+        name = "Home"
+        url = "/"
+        weight = 1
+        [menu.main.params]
+            icon = "home"
+    [[menu.main]]
+        name = "Blog"
+        url = "/blog/"
+        weight = 2
+        [menu.main.params]
+            icon = "edit"
+    [[menu.main]]
+        name = "TIL"
+        url = "/til/"
+        weight = 3
+        [menu.main.params]
+            icon = "award"
+    [[menu.main]]
+        name = "Tags"
+        url = "/tags/"
+        weight = 4
+        [menu.main.params]
+            icon = "tag"
+    [[menu.main]]
+        name = "About"
+        url = "/about/"
+        weight = 5
+        [menu.main.params]
+            icon = "user"
+
+[taxonomies]
+  tag = "tags"
+  series = "series"
+
+[permalinks]
+  blog = "/:year/:month/:title"
+  til = "/til/:year-:month-:day/"
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = true
+    style = "github"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

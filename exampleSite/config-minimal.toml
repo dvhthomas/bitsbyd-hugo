@@ -1,0 +1,11 @@
+# Absolute minimal config - tests theme with zero optional params
+baseURL = "https://example.com/"
+languageCode = "en-us"
+title = "Minimal Test Site"
+theme = "bitsbyme"
+
+# This is the BARE MINIMUM - no optional params at all
+# Should work without errors
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]

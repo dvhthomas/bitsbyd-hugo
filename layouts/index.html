@@ -1,0 +1,39 @@
+{{ define "main" }}
+
+<div id="home-jumbotron" class="jumbotron text-center">
+    <h1>{{ .Title }}</h1>
+    {{ with .Site.Params.homeText }}
+    <p class="font-125">{{ . | markdownify }}</p>
+    {{ end }}
+    <div class="d-flex justify-content-center">
+        {{ partial "search_form.html" . }}
+    </div>
+</div>
+
+{{ with .Site.Params.homeIntro }}
+<p>{{ . | markdownify }}</p>
+{{ end }}
+
+<hr />
+
+{{ $allContent := where .Site.RegularPages "Section" "in" (slice "blog" "til")
+}} {{ range first 10 $allContent }} {{ partial "article-listing.html" . }} {{
+end }}
+
+<script>
+    document.addEventListener("keydown", function (e) {
+        if (
+            e.key === "/" &&
+            document.activeElement.tagName !== "INPUT" &&
+            document.activeElement.tagName !== "TEXTAREA"
+        ) {
+            e.preventDefault();
+            var searchInput = document.getElementById("search-query");
+            if (searchInput) {
+                searchInput.focus();
+            }
+        }
+    });
+</script>
+
+{{ end }}

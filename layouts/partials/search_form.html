@@ -1,0 +1,21 @@
+<form
+    action="/search"
+    method="GET"
+    class="form-inline"
+    role="search"
+    aria-label="Site search"
+>
+    <label for="search-query" class="sr-only">{{ .Site.Params.searchLabel | default "Search the site" }}</label>
+    <input
+        class="form-control"
+        type="search"
+        name="s"
+        id="search-query"
+        placeholder="{{ .Site.Params.searchPlaceholder | default "Search...." }}"
+        aria-label="Search query"
+        autofocus
+    />
+    <button class="btn search-button" type="submit" aria-label="Submit search">
+        {{ .Site.Params.searchButton | default "Search" }}
+    </button>
+</form>
